@@ -17,6 +17,7 @@ namespace AnimalShelterClient.Controllers
     public IActionResult Index(string species, string gender)
     {
       var allAnimals = Animal.GetAnimals(species, gender);
+      ViewBag.BreedList = Animal.GetBreeds();
       return View(allAnimals);
     }
 

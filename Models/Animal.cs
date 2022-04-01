@@ -39,5 +39,15 @@ namespace AnimalShelterClient.Models
 
       return animal;
     }
+    public static List<string> GetBreeds()
+    {
+      var apiCallTask = AnimalApiHelper.GetBreeds();
+      var result = apiCallTask.Result;
+
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      List<string> breedList = JsonConvert.DeserializeObject<List<string>>(jsonResponse.ToString());
+
+      return breedList;
+    }
   }
 }
