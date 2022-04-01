@@ -17,6 +17,7 @@ namespace AnimalShelterClient.Models
     public bool GoodWithOtherAnimals { get; set; }
     public bool GoodWithChildren { get; set; }
     public DateTime DateListed { get; set; }
+    public string AnimalPhotoURL { get; set; }
 
     public static List<Animal> GetAnimals()
     {
