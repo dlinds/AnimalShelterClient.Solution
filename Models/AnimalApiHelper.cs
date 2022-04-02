@@ -5,10 +5,10 @@ namespace AnimalShelterClient.Models
 {
   class AnimalApiHelper
   {
-    public static async Task<string> GetAll(string species, string gender)
+    public static async Task<string> GetAll(string species, string gender, string breed, int age, string ageSearchType, int adoptionBudget, string goodWithOtherAnimals, string goodWithChildren)
     {
       RestClient client = new RestClient("http://localhost:5000/api");
-      RestRequest request = new RestRequest($"animals?species={species}&gender={gender}", Method.GET);
+      RestRequest request = new RestRequest($"animals?species={species}&gender={gender}&breed={breed}&age={age}&ageSearchType={ageSearchType}&adoptionBudget={adoptionBudget}&goodWithOtherAnimals={goodWithOtherAnimals}&goodWithChildren={goodWithChildren}", Method.GET);
       var response = await client.ExecuteTaskAsync(request);
 
       return response.Content;

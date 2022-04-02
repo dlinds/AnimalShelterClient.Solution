@@ -9,7 +9,7 @@
         <p>
           Want to find the perfect pet? Use the search parameters below to find your exact match.
         </p>
-        <form>
+        <form method="GET" action="/animals">
           <div class="form-group my-3">
             <label for="species" class="mb-2">Species</label>
             <select class="form-control" id="species" name="species">
@@ -52,8 +52,8 @@
             </div>
           </div>
           <div class="form-group my-3">
-            <label for="ageSearchType" class="mb-2">What is your budget?</label>
-            <input type="number" min="0" class="form-control" name="budget" placeholder="$">
+            <label for="adoptionBudget" class="mb-2">What is your budget?</label>
+            <input type="number" min="0" class="form-control" name="adoptionBudget" placeholder="$">
           </div>
           <div class="form-group my-3">
             <label for="goodWithChildren" class="mb-2">Are there children in the house?</label>
@@ -131,7 +131,9 @@
               </div>
               <div class="card-body mx-0 pt-0">
                 <p class="card-text text-center fs-6">
-                  Fees: $@Model[x].AdoptionPrice
+                    Age (est): @Model[x].Age years old
+                  <br>
+                    Fees: $@Model[x].AdoptionPrice
                   <br>
                     Listing Date: @Model[x].DateListed.ToString("MM/dd/yyyy")
                   </p>

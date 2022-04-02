@@ -19,9 +19,9 @@ namespace AnimalShelterClient.Models
     public DateTime DateListed { get; set; }
     public string AnimalPhotoURL { get; set; }
 
-    public static List<Animal> GetAnimals(string species, string gender)
+    public static List<Animal> GetAnimals(string species, string gender, string breed, int age, string ageSearchType, int adoptionBudget, string goodWithOtherAnimals, string goodWithChildren)
     {
-      var apiCallTask = AnimalApiHelper.GetAll(species, gender);
+      var apiCallTask = AnimalApiHelper.GetAll(species, gender, breed, age, ageSearchType, adoptionBudget, goodWithOtherAnimals, goodWithChildren);
       var result = apiCallTask.Result;
 
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
