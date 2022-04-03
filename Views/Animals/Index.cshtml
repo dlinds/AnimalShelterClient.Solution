@@ -88,7 +88,7 @@
           <div class="col-sm-12 col-lg-6 my-3 ">
             <div class="card shadow-sm bg-white">
               <div class="text-end p-2">
-                <a class="text-dark text-decoration-none" href="/destinations/edit/@Model[x].AnimalId">
+                <a class="text-dark text-decoration-none" href="/animals/edit/@Model[x].AnimalId">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square text-muted" viewBox="0 0 16 16">
                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
@@ -110,7 +110,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        @using (Html.BeginForm("Delete", "Destinations"))
+                        @using (Html.BeginForm("Delete", "Animals"))
                         {
                           <input type="hidden" name="id" value="@Model[x].AnimalId">
                           <button type="submit" class="btn btn-danger">Yes, Delete</button>
@@ -161,11 +161,11 @@
                       }
                 </p>
                 <div class="text-center">
-                  <button type="button" class="btn btn-sm travel-color-darkest text-white shadow-sm" data-bs-toggle="modal" data-bs-target="#exampleModal-@x">
+                  <button type="button" class="btn btn-sm travel-color-darkest text-white shadow-sm" data-bs-toggle="modal" data-bs-target="#adoptModal-@x">
                     Adopt
                   </button>
                 </div>
-                <div class="modal fade" id="exampleModal-@x" tabindex="-1" aria-labelledby="#@Model[x].AnimalId-ModalLabel" aria-hidden="true">
+                <div class="modal fade" id="adoptModal-@x" tabindex="-1" aria-labelledby="#@Model[x].AnimalId-ModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     @using (Html.BeginForm("Create", "Reviews"))
                     {
@@ -178,15 +178,15 @@
                         <p class="my-5">We are thrilled in your interest in @Model[x].Name! For the application process, please tell us a little bit about yourself. Once we review your appication, we will reach out with next steps.
                         </p>
                         <div class="form-group">
-                          <label for="reviewText-@x">About You</label>
-                          <textarea rows="10" class="form-control mb-3 shadow-sm" name="Review.ReviewText" id="reviewText-@x" required="required"></textarea>
+                          <label for="aboutYou-@x">About You</label>
+                          <textarea rows="10" class="form-control mb-3 shadow-sm" name="AboutYou" id="aboutYou-@x" required="required"></textarea>
                         </div>
                         <div class="form-group">
-                          <label for="reviewUserName-@x">What kind of housing do you have?</label>
-                          <input type="text" class="form-control mb-3 shadow-sm" name="Review.UserName" id="reviewUserName-@x" required="required">
+                          <label for="housingType-@x">What kind of housing do you have?</label>
+                          <input type="text" class="form-control mb-3 shadow-sm" name="HousingType" id="housingType-@x" required="required">
                         </div>
                         <div class="form-group">
-                          <label for="rating-@x">Do you have children?</label>
+                          <label for="adoptHaveChildren-@x">Do you have children?</label>
                           <select class="form-control mb-3" id="adoptHaveChildren-@x" name="adoptHaveChildren-@x">
                             <option disabled selected></option>
                             <option value="true">Yes</option>
@@ -194,7 +194,7 @@
                           </select>
                         </div>
                         <div class="form-group">
-                          <label for="rating-@x">Do you have other animals?</label>
+                          <label for="adoptHaveOtherAnimals-@x">Do you have other animals?</label>
                           <select class="form-control mb-3" id="adoptHaveOtherAnimals-@x" name="adoptHaveOtherAnimals-@x">
                             <option disabled selected></option>
                             <option value="true">Yes</option>
@@ -202,12 +202,12 @@
                           </select>
                         </div>
                         <div class="form-group">
-                          <label for="rating-@x">Phone</label>
-                          <input type="number" class="form-control w-50 shadow-sm mb-3" name="Review.Rating" id="rating-@x" min="0" max="10">
+                          <label for="phone-@x">Phone</label>
+                          <input type="number" class="form-control w-50 shadow-sm mb-3" name="Phone" id="phone-@x" min="0" max="10">
                         </div>
                         <div class="form-group">
-                          <label for="rating-@x">Email</label>
-                          <input type="email" class="form-control shadow-sm mb-3" name="Review.Rating" id="rating-@x">
+                          <label for="email-@x">Email</label>
+                          <input type="email" class="form-control shadow-sm mb-3" name="email" id="email-@x">
                         </div>
                         <input type="hidden" value="@Model[x].AnimalId" name="Animal.AnimalId">
                       </div>

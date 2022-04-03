@@ -18,6 +18,7 @@ namespace AnimalShelterClient.Controllers
     {
       var allAnimals = Animal.GetAnimals(species, gender, breed, age, ageSearchType, adoptionBudget, goodWithOtherAnimals, goodWithChildren);
       ViewBag.BreedList = Animal.GetBreeds();
+      ViewBag.SpeciesList = Animal.GetSpecies();
       return View(allAnimals);
     }
 
