@@ -64,5 +64,11 @@ namespace AnimalShelterClient.Models
       string jsonAnimal = JsonConvert.SerializeObject(animal);
       var apiCallTask = AnimalApiHelper.Post(jsonAnimal);
     }
+
+    public static void Put(Animal animal)
+    {
+      string jsonAnimal = JsonConvert.SerializeObject(animal);
+      var apiCallTask = AnimalApiHelper.Put(animal.AnimalId, jsonAnimal);
+    }
   }
 }
