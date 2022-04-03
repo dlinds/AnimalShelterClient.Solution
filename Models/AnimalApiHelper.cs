@@ -27,5 +27,21 @@ namespace AnimalShelterClient.Models
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
+    public static async Task<string> GetSpecies()
+    {
+      RestClient client = new RestClient("http://localhost:5000/api");
+      RestRequest request = new RestRequest($"animals/species", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
+      return response.Content;
+    }
+
+    public static async Task Post(string newAnimal)
+    {
+      RestClient client = new RestClient("http://localhost:5000/api");
+      RestRequest request = new RestRequest($"animals", Method.POST);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddJsonBody(newAnimal);
+      var response = await client.ExecuteTaskAsync(request);
+    }
   }
 }

@@ -26,5 +26,15 @@ namespace AnimalShelterClient.Controllers
       var thisAnimal = Animal.GetDetails(id);
       return View(thisAnimal);
     }
+    public ActionResult Create()
+    {
+      return View();
+    }
+    [HttpPost]
+    public IActionResult Create(Animal animal)
+    {
+      Animal.Post(animal);
+      return RedirectToAction("Index");
+    }
   }
 }
