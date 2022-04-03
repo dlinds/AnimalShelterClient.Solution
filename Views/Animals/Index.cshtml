@@ -14,8 +14,10 @@
             <label for="species" class="mb-2">Species</label>
             <select class="form-control" id="species" name="species">
               <option disabled selected></option>
-              <option value="dog">Dog</option>
-              <option value="cat">Cat</option>
+              @foreach (string species in ViewBag.SpeciesList)
+              {
+                <option value="@species">@species</option>
+              }
             </select>
           </div>
           <div class="form-group  my-3">

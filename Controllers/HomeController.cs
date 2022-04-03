@@ -20,7 +20,7 @@ namespace AnimalShelterClient.Solution.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Animals");
         }
 
         public IActionResult Privacy()
