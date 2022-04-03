@@ -70,5 +70,10 @@ namespace AnimalShelterClient.Models
       string jsonAnimal = JsonConvert.SerializeObject(animal);
       var apiCallTask = AnimalApiHelper.Put(animal.AnimalId, jsonAnimal);
     }
+
+    public static void Delete(int id)
+    {
+      var apiCallTask = AnimalApiHelper.Delete(id);
+    }
   }
 }

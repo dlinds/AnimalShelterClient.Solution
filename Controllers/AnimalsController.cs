@@ -50,5 +50,12 @@ namespace AnimalShelterClient.Controllers
       Animal.Put(animal);
       return RedirectToAction("Index");
     }
+
+    [HttpPost]
+    public IActionResult Delete(int id)
+    {
+      Animal.Delete(id);
+      return RedirectToAction("Index");
+    }
   }
 }
