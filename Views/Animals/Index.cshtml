@@ -13,7 +13,7 @@
           <div class="form-group my-3">
             <label for="species" class="mb-2">Species</label>
             <select class="form-control" id="species" name="species">
-              <option disabled selected></option>
+              <option disabled selected>-- Select --</option>
               @foreach (string species in ViewBag.SpeciesList)
               {
                 <option value="@species">@species</option>
@@ -23,7 +23,7 @@
           <div class="form-group  my-3">
             <label for="gender" class="mb-2">Gender</label>
             <select class="form-control" id="gender" name="gender">
-              <option disabled selected></option>
+              <option disabled selected>-- Select --</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
@@ -31,7 +31,7 @@
           <div class="form-group my-3">
             <label for="breed" class="mb-2">Breed</label>
             <select class="form-control" id="breed" name="breed">
-              <option disabled selected></option>
+              <option disabled selected>-- Select --</option>
               @foreach (string breed in ViewBag.BreedList)
               {
                 <option value="@breed">@breed</option>
@@ -43,7 +43,7 @@
             <div class="row">
               <div class="col-lg-7 col-md-12">
                 <select class="form-control" id="ageSearchType" name="ageSearchType">
-                  <option disabled selected></option>
+                  <option disabled selected>-- Select --</option>
                   <option value="older">Older Than</option>
                   <option value="younger">Younger Than</option>
                 </select>
@@ -60,7 +60,7 @@
           <div class="form-group my-3">
             <label for="goodWithChildren" class="mb-2">Are there children in the house?</label>
             <select class="form-control" id="goodWithChildren" name="goodWithChildren">
-              <option disabled selected></option>
+              <option disabled selected>-- Select --</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
@@ -68,7 +68,7 @@
           <div class="form-group my-3">
             <label for="goodWithOtherAnimals" class="mb-2">Are there other pets in the house?</label>
             <select class="form-control" id="goodWithOtherAnimals" name="goodWithOtherAnimals">
-              <option disabled selected></option>
+              <option disabled selected>-- Select --</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
