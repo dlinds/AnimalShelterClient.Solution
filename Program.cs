@@ -6,6 +6,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using System.IO;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -17,7 +18,15 @@ namespace AnimalShelterClient.Solution
   {
     public static void Main(string[] args)
     {
-      CreateHostBuilder(args).Build().Run();
+      var host = new WebHostBuilder()
+        .UseKestrel()
+        .UseContentRoot(Directory.GetCurrentDirectory())
+        .UseIISIntegration()
+        .UseIIS()
+        .UseStartup<Startup>()
+        .Build();
+
+      host.Run();
     }
 
     public static IHostBuilder CreateHostBuilder(string[] args) =>

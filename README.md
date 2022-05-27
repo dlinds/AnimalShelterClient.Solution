@@ -23,6 +23,8 @@ This is a C# web application for an animal shelter API. This application serves 
 
 <br>
 
+If you would like to view the front end application that calls the API mentioned above, please navigate to [http://animalshelter.dlinds.com:6003](http://animalshelter.dlinds.com:6003). You can view the Swagger documentation and endpoints for the API here: [http://animalshelterapi.dlinds.com:6003/swagger/index.html](http://animalshelterapi.dlinds.com:6003/swagger/index.html).
+
 # Setup/Installation Requirements
 
 ## Cloning the repository
